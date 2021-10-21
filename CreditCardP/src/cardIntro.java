@@ -22,8 +22,6 @@ public class cardIntro
 					String letter = myCredit.nextLine();
 					
 					System.out.println(letter);
-					
-					
 	        	}
 	    }
 		
