@@ -7,19 +7,44 @@ import java.io.IOException;
 public class cardWithFile
 	{
 		
+		static long cardnumber; 
+		
 		
  public static void main(String[] args) throws IOException
 	{
+		importCreditNow();
 		Real1();
 		
 		
 	}
  
+ 
+	public static void importCreditNow() throws IOException
+		{
+			
+			Scanner myCredit = new Scanner(new File("CreditCardBoi.txt"));
+			
+			while(myCredit.hasNext())
+				{
+					cardnumber = myCredit.nextLong();
+//					//create Array
+//					int [] txtNum = new int[cardnumber.length()];
+//					
+//					//fill Array
+//					for (int j = 0; j < Letterz.length(); j++)
+//						{
+//							
+//						}
+					
+	        	}
+		}
+ 
+ 
  public static void Real1() throws IOException
 		{
-			//practice code before use text file
+			//code before use text file
 			
-			//mock arrays
+			//real arrays
 			long [] practice1 = {5,4,2,4,1,8,0,1,2,3,4,5,6,7,8,9};
 			long [] practice2 = {4,4,8,1,3,5,7,9};
 			long [] nArray = new long[16];
