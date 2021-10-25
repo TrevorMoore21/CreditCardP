@@ -3,29 +3,19 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class cardIntro
-	{
-		public static void main(String[] args) throws IOException
-			{
-				//importCredit();
-				Practice1();
-				
-			}
 
-		public static void importCredit() throws IOException
-		{
-			
-			Scanner myCredit = new Scanner(new File("CreditCardBoi.txt"));
-			
-			while(myCredit.hasNext())
-				{
-					String letter = myCredit.nextLine();
-					
-					System.out.println(letter);
-	        	}
-	    }
+public class cardWithFile
+	{
 		
-		public static void Practice1() throws IOException
+		
+ public static void main(String[] args) throws IOException
+	{
+		Real1();
+		
+		
+	}
+ 
+ public static void Real1() throws IOException
 		{
 			//practice code before use text file
 			
@@ -90,6 +80,5 @@ public class cardIntro
 				
 				
 		}
-		
-		
+ 
 	}
