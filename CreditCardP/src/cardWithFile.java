@@ -7,54 +7,51 @@ import java.io.IOException;
 public class cardWithFile
 	{
 		
-		static long cardnumber; 
+		static long cardNumber; 
+		static long [] moneyMaker = new long[16];
+		static int validCCCounter = 0;
 		
 		
  public static void main(String[] args) throws IOException
 	{
-		importCreditNow();
-		Real1();
+		Scanner myCredit = new Scanner(new File("CreditCardBoi.txt"));
+		while(myCredit.hasNext())
+			{
+				cardNumber = myCredit.nextLong();
+				fillArray();
+				Real1();
+			}
 		
+		System.out.println("/nThis list contains " + validCCCounter + " potentially calid credit card numbers");
 		
 	}
  
  
-	public static void importCreditNow() throws IOException
-		{
-			
-			Scanner myCredit = new Scanner(new File("CreditCardBoi.txt"));
-			
-			while(myCredit.hasNext())
-				{
-					cardnumber = myCredit.nextLong();
-//					//create Array
-//					int [] txtNum = new int[cardnumber.length()];
-//					
-//					//fill Array
-//					for (int j = 0; j < Letterz.length(); j++)
-//						{
-//							
-//						}
-					
-	        	}
-		}
+ 
+ public static void fillArray() throws IOException
+	 {
+	 
+		 for (int y = 0; y < 16; y++)
+			 {
+			 
+				 moneyMaker[y] = cardNumber % 10;
+				 cardNumber = cardNumber / 10;
+			 }
+		 
+	 }	
  
  
  public static void Real1() throws IOException
 		{
-			//code before use text file
 			
-			//real arrays
-			long [] practice1 = {5,4,2,4,1,8,0,1,2,3,4,5,6,7,8,9};
-			long [] practice2 = {4,4,8,1,3,5,7,9};
 			long [] nArray = new long[16];
-		
+			//counters
 			int countA = 1;
 			int countB = 0;
-				for (int i = 0; i < practice1.length; i += 2)
+				for (int i = 0; i < moneyMaker.length; i += 2)
 					{
-						//change every other number in array
-						long dig = practice1[i];
+						//doubling every other number in array
+						long dig = moneyMaker[i];
 						dig = dig * 2;
 					
 						//change numbers if more than 10
@@ -62,19 +59,19 @@ public class cardWithFile
 							{
 								long kill = dig % 10;
 								long slice = kill + 1;
-								practice1[i] = slice;
+								moneyMaker[i] = slice;
 							}
 						else
 							{
-								practice1[i] = dig;
+								moneyMaker[i] = dig;
 							}
 					
 						//replacing old array with new values
 						
-						nArray[countB] = practice1[i];
+						nArray[countB] = moneyMaker[i];
 						System.out.print(nArray[countB]);
 						countB++;
-						nArray[countB] = practice1[countA];
+						nArray[countB] = moneyMaker[countA];
 						System.out.print(nArray[countB]);
 						countB++;
 						countA += 2;
@@ -95,7 +92,8 @@ public class cardWithFile
 					{
 						if (dTen == 0)
 							{
-								System.out.println("The credit card number: " + nArray[t] + " is valid");
+								System.out.println("The credit card number: " + nArray[t] + " is potentially valid");
+								validCCCounter ++;
 							}
 						else
 							{

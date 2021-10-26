@@ -8,7 +8,7 @@ public class cardIntro
 		public static void main(String[] args) throws IOException
 			{
 				//importCredit();
-				Practice1();
+				//Practice1();
 				
 			}
 
