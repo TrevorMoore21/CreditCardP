@@ -22,7 +22,7 @@ public class cardWithFile
 				Real1();
 			}
 		
-		System.out.println("/nThis list contains " + validCCCounter + " potentially calid credit card numbers");
+		System.out.println("\nThis list contains " + validCCCounter + " potentially valid credit card numbers");
 		
 	}
  
@@ -88,18 +88,18 @@ public class cardWithFile
 			
 				dTen = sum % 10; 
 				
-				for (int t = 0; t < nArray.length; t ++)
-					{
+//				for (int t = 0; t < nArray.length; t ++)
+//					{
 						if (dTen == 0)
 							{
-								System.out.println("The credit card number: " + nArray[t] + " is potentially valid");
+								System.out.println("The credit card number: " + cardNumber + " is potentially valid");
 								validCCCounter ++;
 							}
 						else
 							{
-								System.out.println("The credit card number: " + nArray[t] + " is invalid");
+								System.out.println("The credit card number: " + cardNumber + " is invalid");
 							}
-					}
+					//}
 				
 				
 		}
