@@ -14,6 +14,7 @@ public class cardWithFile
 		
  public static void main(String[] args) throws IOException
 	{
+		System.out.println("Hello friend");
 		Scanner myCredit = new Scanner(new File("CreditCardBoi.txt"));
 		while(myCredit.hasNext())
 			{
