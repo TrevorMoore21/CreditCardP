@@ -31,12 +31,15 @@ public class cardWithFile
  public static void fillArray() throws IOException
 	 {
 	 
-		 for (int y = 0; y < 16; y++)
+		 for (int y = 15; y >= 0; y--)
 			 {
 			 
 				 moneyMaker[y] = cardNumber % 10;
 				 cardNumber = cardNumber / 10;
+				
+				 
 			 }
+		
 		 
 	 }	
  
